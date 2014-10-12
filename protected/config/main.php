@@ -32,20 +32,19 @@ return array(
 // enable cookie-based authentication
             'allowAutoLogin' => true,
         ),
-        'booster'=>array(
-            'class'=>'booster.components.Booster',
+        'booster' => array(
+            'class' => 'booster.components.Booster',
         ),
 // uncomment the following to enable URLs in path-format
-        /*
-          'urlManager'=>array(
-          'urlFormat'=>'path',
-          'rules'=>array(
-          '<controller:\w+>/<id:\d+>'=>'<controller>/view',
-          '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-          '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-          ),
-          ),
-         */
+        'urlManager' => array(
+            'urlFormat' => 'path',
+            'showScriptName' => false,
+            'rules' => array(
+                '<controller:\w+>/<id:\d+>' => '<controller>/view',
+                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+            ),
+        ),
         'db' => array(
             'connectionString' => 'sqlite:' . dirname(__FILE__) . '/../data/testdrive.db',
         ),
@@ -79,7 +78,7 @@ return array(
             ),
         ),
     ),
-    'preload'=>array('booster'),
+    'preload' => array('booster'),
     // application-level parameters that can be accessed
 // using Yii::app()->params['paramName']
     'params' => array(
